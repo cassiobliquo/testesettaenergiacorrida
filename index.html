@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Setta Energia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="hero">
+        <div class="logo-container">
+            <img src="assets/logo.svg" alt="Logo Setta Energia" />
+        </div>
+        <div class="text-header" style="height: 120px;">
+            </div>
+        
+        
+         </div>
+
+    <div class="divisor-wrapper">
+        <a href="#formulario-ancora" class="divisor-circle" aria-label="Rolar para o formulário">
+            <img src="assets/arrow-down.svg" alt="Rolar para baixo">
+        </a>
+    </div>
+
+    <section class="formulario" id="formulario-ancora">
+        <div class="form-container">
+            <h2>Comece a economizar!</h2>
+            <p>Preencha as informações abaixo, e<br>em breve entraremos em contato.</p>
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Nome" required>
+                </div>
+                <div class="form-group">
+                    <div class="form-group-inline">
+                        <input type="text" class="ddd" placeholder="DDD" required>
+                        <input type="tel" class="telefone" placeholder="Telefone" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="E-mail" required>
+                </div>
+                <div class="form-inline">
+                    <label for="valorConta">Valor da sua conta:</label>
+                    <input type="text" id="valorConta" placeholder="R$ 0,00" required inputmode="decimal">
+                </div>
+                <p class="possui-cupom">Possui cupom?</p>
+                <button type="submit" class="btn-submit">Quero economizar</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Perguntas Frequentes</h2>
+        <div class="faq-item">
+            <details><summary>Como funciona?</summary><p>Você se cadastra e recebe créditos <br>de energia solar na sua conta.</p></details>
+            <details><summary>Pago alguma taxa extra?</summary><p>Não. Você paga apenas o valor com desconto.</p></details>
+            <details><summary>Existe fidelidade?</summary><p>Não há fidelidade. Você pode cancelar a qualquer momento.</p></details>
+            <details><summary>O que preciso?</summary><p>Informar dados básicos e valor da conta de luz.</p></details>
+            <details><summary>Quando inicia-se o desconto?</summary><p>Após confirmação de adesão, geralmente em até 30 dias.</p></details>
+            <details><summary>O que a Setta ganha com isso?</summary><p>Ela intermedia a venda de créditos de energia limpa.</p></details>
+            <details><summary>Como acompanho meu consumo?</summary><p>Através de relatórios mensais ou via atendimento.</p></details>
+        </div>
+    </section>
+
+    <a href="https://wa.me/5511999999999" class="whatsapp-fixo" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+        <img src="assets/WHATSAPP.svg" alt="WhatsApp" />
+    </a>
+
+    <script>
+        // --- FUNCIONALIDADE 1: ROLAGEM SUAVE AO CLICAR NO BOTÃO ---
+        document.querySelector('.divisor-circle').addEventListener('click', function(event) {
+            // Previne o comportamento padrão do link (o "pulo" imediato)
+            event.preventDefault();
+
+            // Pega o destino da rolagem (a seção do formulário)
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            // Rola a página suavemente até o elemento
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+
+        // --- FUNCIONALIDADE 2: MÁSCARA DE MOEDA (R$) NO CAMPO DE VALOR ---
+        const currencyInput = document.getElementById('valorConta');
+
+        currencyInput.addEventListener('input', function(event) {
+            // Pega o valor digitado e remove tudo que não for número
+            let value = event.target.value.replace(/\D/g, '');
+
+            // Se o valor estiver vazio, não faz nada
+            if (!value) {
+                event.target.value = '';
+                return;
+            }
+
+            // Converte o valor para número (dividindo por 100 para tratar como centavos)
+            const numericValue = parseFloat(value) / 100;
+
+            // Formata o número para o padrão de moeda brasileiro (BRL)
+            const formattedValue = new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            }).format(numericValue);
+
+            // Atualiza o valor no campo
+            event.target.value = formattedValue;
+        });
+    </script>
+
+</body>
+</html>

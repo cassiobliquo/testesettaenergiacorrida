@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #13154f; /* O fundo do body é o mesmo do hero */
+    color: #ffa300;
+    line-height: 1.2;
+}
+
+.hero {
+    background: url('assets/bg-hero.png') no-repeat center center;
+    background-size: cover;
+    padding: 128px 20px 500px 20px; /* Padding inferior para dar espaço ao divisor */
+    text-align: center;
+    color: white;
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    max-width: 200px;
+    height: auto;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1140px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* --- SEÇÃO DE BENEFÍCIOS (dentro do hero) --- */
+.simulacao {
+    color: #ffa300;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.beneficios {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.item {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.item .icone {
+    width: 60px;
+    height: 60px;
+    background-color: #ffa300;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.item p {
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1,2;
+}
+
+.simulacao .descricao-secundaria {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- DIVISOR ENTRE SEÇÕES --- */
+.divisor-wrapper {
+    position: relative;
+    background-color: #f7f7f7; /* Cor de fundo da seção seguinte */
+    height: 50px;
+}
+
+.divisor-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #ffa300;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -35px; /* Metade para fora, criando a sobreposição */
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.divisor-circle img {
+    width: 28px;
+    height: 28px;
+}
+
+/* --- SEÇÃO DO FORMULÁRIO --- */
+.formulario {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+}
+
+.form-container {
+    background-color: #13154f;
+    color: white;
+    padding: 40px 25px;
+    border-radius: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-container h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.form-container p {
+    color: #ffa300;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group-inline {
+    display: flex;
+    gap: 10px;
+}
+
+.form-group-inline input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 20px;
+    border: none;
+    background-color: #eeeeee;
+    color: #13154f;
+    font-size: 1rem;
+    outline: none;
+}
+
+.form-group-inline input.ddd {
+    flex: 0 1 80px;
+}
+
+.form-group-inline input.telefone {
+    flex: 1 1 auto;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 20px;
+    border: none;
+    background-color: #eeeeee;
+    color: #13154f;
+    font-size: 1rem;
+    outline: none;
+}
+
+.form-group input::placeholder {
+    color: #666;
+}
+
+/* AJUSTE FINAL DO FORMULÁRIO */
+.form-inline {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.form-inline label {
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.form-inline input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 20px;
+    border: 1px solid #ffa300;
+    background-color: transparent;
+    color: #fff;
+}
+
+.possui-cupom {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #ffa300;
+    color: #13154f;
+    border: none;
+    padding: 14px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #e69300;
+}
+
+/* --- SEÇÃO FAQ --- */
+.faq {
+    background-color: #13154f;
+    padding: 48px 32px;
+}
+
+.faq h2 {
+    font-size: 32px; /* AJUSTE FINAL DO TÍTULO */
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.faq-item {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq-item details {
+    margin-bottom: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #eeeeee;
+    border-bottom: 1px solid #3a3d8a;
+    padding-bottom: 10px;
+}
+
+.faq-item summary {
+    font-weight: 600;
+    outline: none;
+}
+
+.faq-item p {
+    margin-top: 8px;
+    margin-left: 20px;
+    font-weight: 400;
+    font-size: 13px;
+    color: #ffa300;
+}
+
+/* --- ÍCONE FLUTUANTE WHATSAPP --- */
+.whatsapp-fixo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-fixo:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-fixo img {
+    width: 100%;
+    height: 100%;
+}
